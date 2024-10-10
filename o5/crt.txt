@@ -1,0 +1,66 @@
+   MYSQL
+data base is interritaer data
+DBMS
+* IT IS A SOFTWARE THAT IS USED TO CREAT ,MANAGE,ORGANIZED,DATABASES
+
+RDBMS
+(Relational Daa Base Management System)
+*Dbms is based on the concept of datbles(relations)
+*data is organizedinto tables with rows and colums
+
+EX:mysql,postgresql,Oracle  etc....
+
+what is sql
+a:sql is straucture quary language that is used to store,manuplate,and retrive data from db
+Note:It is not a database .it is a lanuage used to interact with the database.
+SQL KEY CHARACTERSTICS
+
+sql is used to quary the data using select statement.
+DATA MANUPLATION:used to manuplate the data.
+DATA BASE SCHEMA:It is a predefined attribute which define stracure and constraintrains of the data
+
+BASIC SQL COMMENDS
+There are basically 4 sql operations nameiy crud operations
+
+1.create:to create database,tables we use this
+2.read:to read the data that is present in the database
+3.update:used to modify the existing data
+4.delete:to delete the data base table,specific data point
+note: sql keywords are not case sensitive
+
+      sql  VS mysql
+   sql
+   1.it is a BD language that is used to crud operation on all relational data base
+   TYPES OF SQL commends
+   1.DQL(Data Quary Language):to used to retrive the data from DB
+     ->select
+   2.DDL(Data Defination Language):used to create alter,delete,data bases objects like tables,db
+   3.DML(Data manuplation Language):used to manupulate data[inser,update,delete]
+   4.DCL(Data control language):it used to grant and remove permission
+   5.TCL(Transaction Control Language): used to manage  transaction[commit,rollback,save]
+
+NOSQL(Not Only-----database)
+*it is not relational data bases
+*tise are designed to handle large volume of data[unstructed,semi-structred,structered]
+*nosql do not use sql as the primary quary language
+KEY CHARACTERSTICS
+1.scalability:design for horizontal scalling accross distribited system.
+
+TYPES OF NOSQL DB
+1.Document store:store data asdocument
+2.key value store:store data in key value pair
+3.Graph DB:stores data as graph
+
+*******MONGO DB********
+IT is papular nosql db that stores data flexible,j-son like formate called Bson
+*it is designed for performance and scalability
+
+KEY COMPONET
+uses document that are similar to js to store the data from complex stucture
+making it flexible  for different types of data
+scalable
+CONCLUSION:
+ rdbms(mysql) and nosql db(mongo db) serve different purposes based date need and
+application requirements and undwerstanding the difference and usecases helps in selecting the appropriate
+data base technology for a specific scenario.
+

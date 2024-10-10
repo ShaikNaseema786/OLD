@@ -1,0 +1,311 @@
+9/8/24
+****  PANDAS ******
+
+import pandas as pd 
+#series genarated from a list
+a=[1,7,2]
+myvar=pd.Series(a)
+print(1)
+print(myvar)
+print('----------')
+#labels
+print(myvar[10])
+print('____---------')
+#assingning separate labels to values in the Series
+myvar2=pd.Series(a,index=["x","y","z"]
+print(myvar2)
+print(myvar2["y"])
+print('-----------')
+#series generated from Dictionary
+calories={"day1":420,"day2":380,"day3":390}
+myvar=pd.Series(calories)
+print(myvar)
+print('--------------')
+myvar=pd.Series(calories,index=["day1","day2"])
+print(myvar)
+print('-----------')
+#series genarated from scaler value
+series=pd.Series(5,index=[0,1,2,3])
+print(series)
+print('----------')
+
+#integer series
+int_series=pd.Series([1,2,3,4])
+print(int_series)
+print('------')
+#float Series
+float_series=pd.Series([1.1,2.2,3.3,4.4])
+print(float_series)
+print('---------')
+#string series
+string_series=pd.Series(['a','b','c','d'])
+print(string_series)
+print('-------------')
+#label -based indexing 
+data={'a':10,'b':20,'c':30}
+series=pd.Series(data)
+print(series['a'])
+print(series[['a','c']])
+print('---------------')
+# boolean indexing
+data=[10,20,30,40,50]
+series=pd.Series(data)
+#access element greater than 25
+print(series[series>25])
+print('------------')
+
+
+****CREATING DATA FRAME****
+data={
+  'name':['Alice','Bob','Charli'],
+'Age':[25,30,35],
+'City':['New York','Los Angeles','Chicago']
+}
+df=pd.DataFrame(data)
+print(df)
+print('--------')
+#selecting Columns
+print(df.Name)
+print(df['name'])
+print(df[['name','City']])
+print('---------')
+#### row wise slicing
+
+df=pd.DataFrame(data)
+#select a single row by label
+print(df.loc[0])
+print(df.iloc[0])
+#selet multiple rows
+print(df.iloc[0:2])
+print('--------')
+
+#conditional selection
+#selection rows where age is greater then 25
+print(df[df['Age']>25])
+print('--------------')
+print(df.loc[(df.Name=='Bob')&(df.City=='Los Angeles)])
+
+
+*******GROUPBY IN PANDAS****
+
+#Grouping by single column
+data={
+'name':['Alice','Bob','Charlie','Alice','Bob'],
+ 'age':[25,30,35,25,30],
+  'city':['New York','San Francisco','Los  Angels','New York','San Francisco'],
+ 'salary':[70000,80000,120000,70000,80000]}
+df=pd.DataFrame(data)
+grouped=df.groupby('name')
+print(grouped.groups)
+#calculate the sum of salaries for each group
+salary_sum=grouped['salary'].sum()
+print(salary_sum)
+age_mean=grouped['age'].mean()
+print(age_mean)
+
+#grouping by multiple collumns
+3group by 'name' and 'city'
+grouped_multiple=df.groupby(['name','city'])
+#calculate the sum of  salaries for each group
+salary_sum_multiple=grouped_multiple['salary'].sum()
+print(salary_sum_multiple)
+
+14/8/24
+**** DATA FRAME CONCATENATION ********
+JOIN(),concat()
+
+import pandas as pd
+#define a dictionary containing employee data
+data1={'Name':['Jai','Princi','Gaurav','Anuj'],
+       'Age':[27,24,22,32],
+       'Address':['Nagpur','kanpur','Allahabad','Kannuaj'],
+       'Qualification':['Msc','MA','MCA','Phd']}
+       #define a dictionary containing employee data
+ data2={'Name':['Abhi','Ayushi','Dhiraj','Hitesh'],
+       'Age':[17,14,12,52],
+       'Address':['Nagpur','kanpur','Allahabad','Kannuaj'],
+       'Qualification':['Btech','B.A','Bcom','B.hons']
+     
+ }      
+ #convert the dictionary into data frame
+ df=pd.DataFrame(data1,index=[0,1,2,3])
+ #conver the dictionary into dataFrame
+ df1=pd.DataFrame(data2,index=[2,3,6,7])
+print(df,"\n\n",df1)
+#using a .concat() method
+res1=pd.concat([df,df1])
+res1
+#appying concat with axes
+#join='inner' we get the intersection of dataframe
+res2=pd.concat([df1,df2],axis=1,join'inner')
+res2
+
+EX-2
+
+import pandas as pd
+#define a dictionary containing employee data
+data1={'Name':['Jai','Princi','Gaurav','Anuj'],
+       'Age':[27,24,22,32],
+       'Address':['Nagpur','kanpur','Allahabad','Kannuaj'],
+       'Qualification':['Msc','MA','MCA','Phd']}
+       #define a dictionary containing employee data
+ data2={'Name':['Abhi','Ayushi','Dhiraj','Hitesh'],
+       'Age':[17,14,12,52],
+       'Address':['Nagpur','kanpur','Allahabad','Kannuaj'],
+       'Qualification':['Btech','B.A','Bcom','B.hons']
+     
+ }      
+ #convert the dictionary into data frame
+ df=pd.DataFrame(data1,index=[0,1,2,3])
+ #conver the dictionary into dataFrame
+ df1=pd.DataFrame(data2,index=[4,5,6,7])
+print(df,"\n\n",df1)
+#using a .concat() method
+res1=pd.concat([df,df1])
+res1
+
+****  concating DATAFRAME BY IGNORING INDEXES *****
+
+import pandas as pd
+#define a dictionary containing employee data
+data1={'Name':['Jai','Princi','Gaurav','Anuj'],
+       'Age':[27,24,22,32],
+       'Address':['Nagpur','kanpur','Allahabad','Kannuaj'],
+       'Qualification':['Msc','MA','MCA','Phd']}
+       #define a dictionary containing employee data
+ data2={'Name':['Abhi','Ayushi','Dhiraj','Hitesh'],
+       'Age':[17,14,12,52],
+       'Address':['Nagpur','kanpur','Allahabad','Kannuaj'],
+       'Qualification':['Btech','B.A','Bcom','B.hons']
+     
+ }      
+ #convert the dictionary into data frame
+ df=pd.DataFrame(data1,index=[0,1,2,3])
+ #conver the dictionary into dataFrame
+ df1=pd.DataFrame(data2,index=[2,3,6,7])
+print(df,"\n\n",df1)
+#using ignore_index
+res=pd.concat([df,df1],ignore_index=True)
+res
+
+**** CONCAT A MIX OF SERIES AND DATAFRAME **********
+
+#IMPORT PANDAs module
+import pandas as pd
+#define a dictionary concating empoyee data
+data1={'Name':['Jai','Princi','Gaurav','Anuj'],
+       'Age':[27,24,22,32],
+       'Address':['Nagpur','kanpur','Allahabad','Kannuaj'],
+       'Qualification':['Msc','MA','MCA','Phd']}
+ # convert the dictionary into DataFrame
+ df=pd.DataFrame(data1,index=[0,1,2,3])
+ #creating a Series and dataFrame
+ s1=pd.Series([1000,2000,3000,4000],name='Salary')
+ print(df,"\n\n",s1) 
+ #combing series and dataframe
+ res=pd.concat([df,s1],axis=1)
+    
+
+**** MERGING A DATAFRAME WITH AND  UNIQ  *****
+
+import pandas as pd 
+#defining a dictionary containg employee data
+data1={'Key':['k0','k1','k2','k3'],
+    'Name':['Jai','Princi','Gaurav','Anuj'],
+    'Age':[27,24,22,32]
+}
+#defining a dictionary containing employee data
+ data2={'Key':['k0','k1','k2','k3'],
+        'Address':['Nagpur','kanpur','Allahabad','Kannuaj'],
+       'Qualification':['Btech','B.A','Bcom','B.hons']
+     
+        }
+  #converting the dictionary into dataframe
+  df=pd.DataFrame(data1)
+  #convert the dictionary to dataframe
+  df1=pd.DataFrame(data2)
+  print(df,"\n\n",df1)
+  #using .merge() function
+  res=pd.merge(df,df1,on='Key')  
+  res    
+******MERGING DATAFRAME WIYH MULTIPLE KEY VALUES ****
+
+import pandas as pd
+data1={'Key':['k0','k1','k2','k3'],
+       'Key1':['k0','k1','k0','k1'],
+    'Name':['Jai','Princi','Gaurav','Anuj'],
+    'Age':[27,24,22,32]
+}
+#define dictionary containg employee data
+data2={'Key':['k0','k1','k2','k3'],
+        'Key1':['k0','k1','k0','k1'],
+        'Address':['Nagpur','kanpur','Allahabad','Kannuaj'],
+       'Qualification':['Btech','B.A','Bcom','B.hons']
+     
+        }
+        #convert the dictionary to dataframe
+        df=pd.DataFrame(data1)
+        #convert the dictionary into dataFrame
+        df1=pd.DataFrame(data2)
+        print(df,"\n\n",df1)
+        #  using .merge() dataframe using multiple key
+        res1=pd.merge(df,df1,on=['Key','Key1'])
+        res1
+
+****17/8/24  MERG(INNER,OUTER,LEFT,RIGHT) ***
+
+import pandas as pd
+df1={
+    'name':['hari','ram'],
+    'age':[24,25],
+    'city':['ongole','chirala'],
+    'address':['inkollu','pavuluru'],
+    'email':['hari@12','ram@32']
+}
+df2={
+    'name':['alice','ram'],
+    'age':[24,35],
+    'city':['ongole','inkollu'],
+    'address':['peta','pavuluru'],
+    'email':['alicee@12','ram@12']
+}
+data1=pd.DataFrame(df1,index=[0,1])
+print(data1)
+data2=pd.DataFrame(df2,index=[2,3])
+print(data2)
+print("\n\n")
+op=pd.merge(data1,data2,on='city')
+print(op)
+print("\n\n")
+op1=pd.merge(data1,data2,on='city',how='outer')
+print(op1)
+print("\n\n")
+op2=pd.merge(data1,data2,on='city',how='left')
+print(op2)
+print("\n\n")
+op3=pd.merge(data1,data2,on='city',how='right') 
+print(op3)
+print("\n\n")
+
+
+
+output:
+   name  age     city   address    email
+0  hari   24   ongole   inkollu  hari@12
+1   ram   25  chirala  pavuluru   ram@32
+    name  age     city   address      email
+2  alice   24   ongole      peta  alicee@12
+3    ram   35  inkollu  pavuluru     ram@12
+
+
+
+  name_x  age_x    city address_x  email_x name_y  age_y address_y    email_y
+0   hari     24  ongole   inkollu  hari@12  alice     24      peta  alicee@12
+
+
+  name_x  age_x     city address_x  email_x name_y  age_y address_y    email_y
+0   hari   24.0   ongole   inkollu  hari@12  alice   24.0      peta  alicee@12
+1    ram   25.0  chirala  pavuluru   ram@32    NaN    NaN       NaN        NaN
+2    NaN    NaN  inkollu       NaN      NaN    ram   35.0  pavuluru     ram@12
+
+

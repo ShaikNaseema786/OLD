@@ -1,0 +1,258 @@
+#case study -state Electricity
+from google.colab import drive
+drive.mount('/content/drive')
+
+op:
+Mounted at /content/drive
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from pandas import read_csv
+path="/content/drive/MyDrive/energy.csv"
+electricity=pd.read_csv(path)
+print(type(electricity))
+print(electricity)
+
+op:
+<class 'pandas.core.frame.DataFrame'>
+          Date        State  Consumption
+0   01-01-2024    Tamilnadu       347.25
+1   02-01-2024      Manipur       605.12
+2   03-01-2024    Telengana       444.63
+3   04-01-2024  Pondicherry       974.54
+4   05-01-2024    Tamilnadu       864.02
+..         ...          ...          ...
+95  05-04-2024       Kerala       587.30
+96  06-04-2024           UP       726.21
+97  07-04-2024       Andhra       305.70
+98  08-04-2024       Sikkim       257.46
+99  09-04-2024  Pondicherry       983.95
+
+[100 rows x 3 columns]
+
+print(electricity.shape)
+
+op:
+(100, 3)
+
+print(electricity.head(5))
+
+op:
+          Date        State  Consumption
+0  01-01-2024    Tamilnadu       347.25
+1  02-01-2024      Manipur       605.12
+2  03-01-2024    Telengana       444.63
+3  04-01-2024  Pondicherry       974.54
+4  05-01-2024    Tamilnadu       864.02
+
+print(electricity.tail(4))
+
+op:
+          Date        State  Consumption
+96  06-04-2024           UP       726.21
+97  07-04-2024       Andhra       305.70
+98  08-04-2024       Sikkim       257.46
+99  09-04-2024  Pondicherry       983.95
+
+print(electricity.info())
+
+op:
+
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 100 entries, 0 to 99
+Data columns (total 3 columns):
+ #   Column       Non-Null Count  Dtype  
+---  ------       --------------  -----  
+ 0   Date         100 non-null    object 
+ 1   State        100 non-null    object 
+ 2   Consumption  100 non-null    float64
+dtypes: float64(1), object(2)
+memory usage: 2.5+ KB
+None
+
+print(electricity.describe())
+
+op:
+       Consumption
+count   100.000000
+mean    534.090400
+std     245.341678
+min     100.470000
+25%     321.570000
+50%     517.075000
+75%     726.215000
+max     997.970000
+
+print("Column Data")
+print(electricity.columns)
+
+op:
+ Column Data
+Index(['Date', 'State', 'Consumption'], dtype='object')
+
+print(electricity[electricity['State'].str.startswith('M')])
+print(electricity[electricity['State'].str.endswith('a')])
+
+op:
+           Date    State  Consumption
+1   02-01-2024  Manipur       605.12
+18  19-01-2024  Mizoram       643.98
+21  22-01-2024  Manipur       948.57
+22  23-01-2024  Manipur       638.98
+37  07-02-2024  Manipur       682.92
+41  11-02-2024  Manipur       248.19
+44  14-02-2024  Mizoram       723.19
+60  01-03-2024  Manipur       469.93
+67  08-03-2024  Manipur       597.60
+70  11-03-2024  Manipur       432.69
+80  21-03-2024  Mizoram       726.23
+          Date      State  Consumption
+2   03-01-2024  Telengana       444.63
+5   06-01-2024    Tripura       749.56
+6   07-01-2024  Telengana       312.39
+7   08-01-2024  Telengana       330.46
+9   10-01-2024    Tripura       739.60
+10  11-01-2024     Andhra       199.80
+11  12-01-2024  Karnataka       495.40
+14  15-01-2024  Karnataka       527.83
+19  20-01-2024     Odisha       585.86
+20  21-01-2024     Kerala       282.76
+23  24-01-2024    Tripura       725.31
+25  26-01-2024     Andhra       661.92
+27  28-01-2024    Tripura       194.94
+36  06-02-2024  Karnataka       344.92
+40  10-02-2024    Tripura       374.30
+42  12-02-2024     Andhra       580.68
+45  15-02-2024  Telengana       342.47
+47  17-02-2024  Telengana       251.46
+49  19-02-2024  Karnataka       602.29
+51  21-02-2024     Odisha       158.40
+55  25-02-2024  Karnataka       741.04
+56  26-02-2024     Odisha       233.28
+59  29-02-2024     Kerala       978.95
+64  05-03-2024     Kerala       712.63
+78  19-03-2024  Telengana       235.65
+79  20-03-2024    Tripura       557.38
+82  23-03-2024     Andhra       393.36
+83  24-03-2024     Andhra       298.22
+86  27-03-2024     Odisha       413.80
+93  03-04-2024  Karnataka       761.69
+95  05-04-2024     Kerala       587.30
+97  07-04-2024     Andhra       305.70
+
+rcb=electricity[electricity['State']=='Andhra']
+print(len(rcb))
+cb=electricity[electricity['State']=='Manipure']
+print(len(cb))
+
+op:
+ 6
+0
+
+
+print(electricity.sort_values(by='State'))
+
+op:
+           Date        State  Consumption
+97  07-04-2024       Andhra       305.70
+42  12-02-2024       Andhra       580.68
+10  11-01-2024       Andhra       199.80
+25  26-01-2024       Andhra       661.92
+83  24-03-2024       Andhra       298.22
+..         ...          ...          ...
+85  26-03-2024           UP       828.55
+26  27-01-2024           UP       366.07
+96  06-04-2024           UP       726.21
+13  14-01-2024  Uttarakhand       906.19
+50  20-02-2024  Uttarakhand       463.45
+
+[100 rows x 3 columns]
+
+print(electricity.sort_values(by='State'))
+print(np.max(electricity['Consumption']))
+print(np.min(electricity['Consumption']))
+print(np.mean(electricity['Consumption']))
+
+op:
+          Date        State  Consumption
+97  07-04-2024       Andhra       305.70
+42  12-02-2024       Andhra       580.68
+10  11-01-2024       Andhra       199.80
+25  26-01-2024       Andhra       661.92
+83  24-03-2024       Andhra       298.22
+..         ...          ...          ...
+85  26-03-2024           UP       828.55
+26  27-01-2024           UP       366.07
+96  06-04-2024           UP       726.21
+13  14-01-2024  Uttarakhand       906.19
+50  20-02-2024  Uttarakhand       463.45
+
+[100 rows x 3 columns]
+997.97
+100.47
+534.0903999999999
+
+
+print(electricity[electricity['State']=='Andhra']['Consumption'].max())
+print(electricity[electricity['State']=='Andhra']['Consumption'].min())
+
+op:
+661.92
+199.8
+
+
+#state _data=electricity[electricity['State']=='Andhra"]
+state1_data=electricity[electricity.State=='Andhra']
+print(state1_data)
+
+op:
+          Date   State  Consumption
+10  11-01-2024  Andhra       199.80
+25  26-01-2024  Andhra       661.92
+42  12-02-2024  Andhra       580.68
+82  23-03-2024  Andhra       393.36
+83  24-03-2024  Andhra       298.22
+97  07-04-2024  Andhra       305.70
+
+state2_data=electricity[electricity['State']=='Karnataka']
+
+state4_data=electricity[electricity['State']=='Telengana']
+state5_data=electricity[electricity['State']=='Tripuram']
+#line chart
+fig,axes=plt.subplots(2)
+axes[0].plot(state1_data['Date'],state1_data['Consumption'],marker='*',color='red')
+
+axes[1].plot(state1_data['Date'],state1_data['Consumption'],marker='^',color='blue')
+#bar chart
+fig1,axes1=plt.subplots(2)
+
+axes[0].bar(state1_data['Date'],state1_data['Consumption'],marker='*',color='red')
+
+axes[1].bar(state1_data['Date'],state1_data['Consumption'],marker='^',color='blue')
+#pie chart
+fig2,axes2=plt.subplots(2)
+state1='UP'
+state2='Kerala'
+state3='Mizoram'
+state4='Delhi'
+labels=[state1.state2]
+state1_total=electricity[electricity['State']==state1]['Consumption'].sum()
+state1_total=electricity[electricity['State']==state2]['Consumption'].sum()
+energy=[state1_total,state2_total]
+#'energy' should be a list of numerical values
+
+energy=[state1_total,state2_total]
+axes2[0].pie(energy,labels=labels,autopct='%1.1f%%')
+
+labels=[state3.state4]
+state3_total=electricity[electricity['State']==state3]['Consumption'].sum()
+state4_total=electricity[electricity['State']==state4]['Consumption'].sum()
+#'energy' should be a list of numerical values
+energy=[state3_total,state4_total]
+axes2[0].pie(energy,labels=labels,autopct='%1.1f%%')
+
+
+
+
+op:

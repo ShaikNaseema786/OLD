@@ -1,0 +1,232 @@
+import numpy as np 
+first_array=np.array([1,3,5,7])
+second_array=np.array([2,4,6,8])
+# using the + operator
+result1=first_array+second_array
+print("using the + operator:",result1)
+#using the add() funcation
+result2=np.add(first_array,second_array)
+print("using the add() funcation:",result2)
+import numpy as np 
+first_array=np.array([3,9,27,81])
+second_array=np.array([2,4,8,16])
+# using the - operator
+result1=first_array-second_array
+print("using the - operator:",result1)
+#using the subtract() funcation
+result2=np.subtract(first_array,second_array)
+print("using the subtract() funcation:",result2)
+
+
+
+import numpy as np 
+first_array=np.array([8,12,64,32])
+second_array=np.array([2,4,8,16])
+# using the / operator
+result1=first_array/second_array
+print("using the /operator:",result1)
+#using the divide() funcation
+result2=np.divide(first_array,second_array)
+print("using the divide() funcation:",result2)
+
+
+
+import numpy as np 
+first_array=np.array([8,12,64,32])
+second_array=np.array([2,4,8,16])
+# using the * operator
+result1=first_array*second_array
+print("using the * operator:",result1)
+#using the multiply() funcation
+result2=np.multiply(first_array,second_array)
+print("using the multiply() funcation:",result2)
+
+
+import numpy as np 
+first_array=np.array([8,2,64,32])
+second_array=np.array([2,4,8,16])
+# using the * operator
+result1=first_array**second_array
+print("using the * operator:",result1)
+#using the multiply() funcation
+result2=np.power(first_array,second_array)
+print("using thepower() funcation:",result2)
+
+
+import numpy as np 
+first_array=np.array([8,2,64,32])
+second_array=np.array([2,4,8,16])
+# using the * operator
+result1=first_array%second_array
+print("using the * operator:",result1)
+#using the multiply() funcation
+result2=np.mod(first_array,second_array)
+print("using the mod() funcation:",result2)
+
+****ARRAY FUNCTION****
+import numpy as np
+#create an array using np.array
+array1=np.array([1,3,5])
+print("np.array():\n",array1)
+#create an aray filled with 0 usin np.zeros()
+array2=np.zeros((3,3))
+print("\nnp.zeros():\n",array2)
+
+#create an array filled with ones
+array3=np.ones((2,4))
+print("\nnp.ones():\n",array3)
+
+#create a 1d array
+array4=np.array([1,3,5,7,9,11])
+
+#reshape the 1d array into 2d array
+array5=np.reshape(array4,(2,3))
+
+#transpose the  2d array
+array6=np.transpose(array5)
+print("original array:\n",array4)
+print("\nreshaped array\n",array5)
+print("\n transposearray:\n",array6)
+
+
+****LOGICAL OPERATOR*****
+import numpy as np 
+array1=np.array([1,2,3])
+array2=np.array([3,2,1])
+
+#less than operator
+result1=array1<array2
+print("array1<array2:",result1)#output true or False
+
+#greater than operator
+result2=array1>array2
+print("array1>array2:",result2)#output true or false
+result=np.less_equal(array1,array2)
+print("using less_equal:",result)
+26/7/24
+
+import numpy as np 
+x1=np.array([True,False,True])
+x2=np.array([False,False,True])
+#logical operator
+print (np.logical_and(x1,x2))# out put[False False True]
+# logical or
+print(np.logical_or(x1,x2))#out put[True False True]
+#logical not
+print(np.logical_not(x1))# out put[False True False]
+
+#rounding function
+import numpy as np 
+number=np.array([1.23456,2.34567,3.45678,4.56789])
+#round the array to two decimal palces
+rounded_array=np.round(number,2)
+print(rounded_array)
+array1=np.array([1.23456,2.3456,3.45678,4.56789])
+print("array after floro():",np.floor(array1))
+print("array after ceil():",np.ceil(array1))
+
+
+
+*****MEDIAN******
+import numpy as np
+array1=np.array([[2,4,6],
+                [8,10,12],
+                [14,16,18]])
+#compute median along horizontal axis
+result1=np.median(array1,axis=1)
+print("median along with horizntal axis:",result1)
+
+#compute median along vertical axis
+result2=np.median(array1,axis=0)
+print("median along with vertical axis:",result2)
+
+#compute median of entire array
+result3=np.median(array1)
+print("median of entire array:",result3)
+
+*****STANDARD DEVIATION***
+import numpy as np
+array1=np.array([[2,4,6],
+                [8,10,12],
+                [14,16,18]])
+#compute std along horizontal axis
+result1=np.std(array1,axis=1)
+print("standard deviation along with horizntal axis:",result1)
+
+#compute std along vertical axis
+result2=np.std(array1,axis=0)
+print("standard deviation along with vertical axis:",result2)
+
+#compute std of entire array
+result3=np.std(array1)
+print("standard deviation of entire array:",result3)
+
+***string function***
+import numpy as np 
+array1=np.array(['iphone','price:'])
+array2=np.array(['15','$900'])
+#perform element -wise array string concatination
+result=np.char.add(array1,array2)
+print(result)
+
+out put:['iphone:15' 'price:$900']
+
+
+****CASE****
+import numpy as np 
+#define array with three string element
+array1=np.array(['A','B','C'])
+# repeat each element in array1 two times
+result=np.char.multiply(array1,2)
+print(result)
+#define an array with three string element
+array1=np.array(['eric','paul','sean'])
+#capitalize the first letter of each string in array
+result=np.char.capitalize(array1)
+print(result)
+array1=np.array(['nEpalI','AmeriCAN','CaNadIan'])
+#convert all string element to uppercase
+result1=np.char.upper(array1)
+#convert all string element to lowercase
+result2=np.char.lower(array1)
+print(" To UPPERCASE:",result1)
+print("To lowercase:",result2)
+
+
+Output:
+
+['AA' 'BB' 'CC']
+['Eric' 'Paul' 'Sean']
+ To UPPERCASE: ['NEPALI' 'AMERICAN' 'CANADIAN']
+To lowercase: ['nepali' 'american' 'canadian']
+
+
+**** creating &indexing****
+
+import numpy as np 
+
+arr=np.array([1,2,3,4])
+print(" FIRST ELEMENT OF ARRAY IS:",arr[0])
+print("sum of 2 elements of aaray is:",arr[2]+arr[3])
+
+Output:
+
+ FIRST ELEMENT OF ARRAY IS: 1
+sum of 2 elements of aaray is: 7
+****SLICING ARRAY****
+
+import numpy as np 
+
+arr=np.array([1,2,3,4,5,6,7])
+print("SLICiNG THE ELEMENT FROM 1 TO 4:", arr[1:5])
+print("SLICiNG THE ELEMENT FROM 4 TO END:", arr[4:])
+print("SLICiNG THE ELEMENT FROM STRAT TO 3:", arr[:4])
+
+
+
+Output:
+
+SLICiNG THE ELEMENT FROM 1 TO 4: [2 3 4 5]
+SLICiNG THE ELEMENT FROM 4 TO END: [5 6 7]
+SLICiNG THE ELEMENT FROM START TO 3: [1 2 3 4]
+

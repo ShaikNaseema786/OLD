@@ -1,0 +1,168 @@
+transform=>detect data tyope to decimal=.
+
+line bar:
+ x- englishoccupation
+y-sum of anualincome
+line-axis:
+ count of yearlyincome
+pie chart:
+     legend :dender
+  vale:count of yearlyincome
+dorchart=
+  legend: englishEducation
+values: sum of NumberCarsO...
+
+cards......
+create new page +
+press card img 123
+   field:sum of anual income
+   cntrl+c,cntrl+v
+ same  3  box are thera 
+filter:
+  filters on visual :
+ drag gender  gender colum 
+   choose M
+visualizatio:
+ field: male income
+copy paste allthing 3 in m,f
+visualization :
+ chang color ,chang font...
+change the categories color
+ genaral->title:income  detail
+         sub title
+change color 
+font size
+divedr
+effect
+visual bar
+save the page
+
+
+
+create new page
+ copy paste the second page 3 cards
+then
+select 
+  slicer
+   then filed 
+     the  sum of anualIncome
+     change the bar the value will be change 
+ again select 
+  slicer
+  the field is english education
+ 
+slicer stetting 
+  change style 
+  selection 
+ select tree map
+ the 
+ englisocupation
+  gender,
+sumof AnualIncome
+change the properties like color,....
+set the TITLe
+select inset at top
+        add text
+    the  
+  "my first Dash board in power BI"
+  change the font,color,style ,
+come to visualization,set the effect
+set background color
+
+create a new page
+select stacked column chart 
+x-axis:englisheducation
+y-axis:sumoAnualIncome
+legend:gender
+smallMultiple:englishOcupation
+we get 4 plots
+ then change the visual
+   in gridline style  and try to change all properties
+  set the title  goto visual
+   go tile
+ set as your wish i take  auto
+
+open power bi
+select gauge
+ value= someFirst Inning score
+same as decond one
+
+value=sumof seconding score
+
+chabe the data type
+choose mathc id
+go up select datatype-select text
+the select slicer
+valu=Math Id
+same as create 3 slicer
+2.Player oftheMatch
+3.Mtch Winner
+4.toss winner
+dont select any option 
+if we select match ID is 1
+then data will change
+line chart 
+x=Team1
+y=First Innings score,second inning
+
+then we create table 
+columns=MatchID
+Team1
+Team2
+select stacked column chart
+x=X-axis
+y=toss winner
+tossdecision
+select Filed map
+lacation=Venue
+this is case study-3
+IPL 2022 case study
+
+then hane selling
+click file
+options  and settings
+select options
+arcGIS for poer bi,Map anf filled map
+select first one
+select security
+
+
+make tick markup last 2,3
+ok
+thenclose the pwer bi open it once again
+ then we select any one the location wiil be changes
+then select ipl gogle photo images for in land scap farmer
+downloade image file
+then goto inser came atlast click image
+select downlod
+choose what are picture are you downlode
+select your pick open it
+then reduethe all slicer samall size
+
+select image 
+go to format image
+thengo scaling
+
+change sizeslike fit,normal.fit
+ set title
+go up insert
+set tytle 'IPL 2022 ANAlysis"
+change the background color 
+canvas background color 
+we use card
+select card
+select date filed
+same as 
+5 card
+2nd card=venue
+3=stage
+rdeuce the font size
+go visual click colum sizi
+create anothe 2 card
+4=ownby
+5=margin
+stop the card sub title 
+switch of cayegarie label
+create repository 
+
+uplode the files in github
