@@ -1,0 +1,90 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load dataset
+df = pd.DataFrame({
+    'Year': [2018, 2019, 2020, 2021],
+    'Sales': [200, 250, 300, 400],
+    'Profit': [20, 30, 50, 70]
+})
+
+# Line Plot
+plt.figure(figsize=(8, 5))
+plt.plot(df['Year'], df['Sales'], marker='o', label='Sales')
+plt.plot(df['Year'], df['Profit'], marker='s', label='Profit')
+plt.title('Yearly Sales and Profit')
+plt.xlabel('Year')
+plt.ylabel('Values')
+plt.legend()
+plt.grid(True)
+plt.show()
+
+# Bar Plot
+plt.figure(figsize=(8, 5))
+df.plot(x='Year', y=['Sales', 'Profit'], kind='bar')
+plt.title('Yearly Sales and Profit')
+plt.xlabel('Year')
+plt.ylabel('Values')
+plt.show()
+
+
+
+
+import matplotlib.pyplot as plt
+
+# Sample data
+data = [22, 19, 30, 35, 24, 26, 28, 33, 29, 30, 26]
+
+# Plot histogram
+plt.hist(data, bins=5, color='lightblue')
+
+# Adding titles, labels, legend
+plt.title('Distribution of Sample Data')
+plt.xlabel('Value Range')
+plt.ylabel('Frequency')
+plt.legend(['Frequency Distribution'])
+
+plt.show()
+
+
+import pandas as pd
+import seaborn as sns
+
+# Reading a CSV file
+df = pd.read_csv('data.csv')
+
+# Filling missing values with median
+df.fillna(df.median(), inplace=True)
+
+# Visualizing dataset using seaborn (pairplot example)
+sns.pairplot(df)
+
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Example Andhra election dataset
+data = {
+    'Party': ['TDP', 'YSRCP', 'JSP', 'Others'],
+    'Seats': [102, 151, 1, 21],
+    'Votes': [3400000, 4400000, 150000, 500000]
+}
+df = pd.DataFrame(data)
+
+# Pie chart
+plt.figure(figsize=(6, 6))
+plt.pie(df['Seats'], labels=df['Party'], autopct='%1.1f%%', startangle=90, colors=['yellow', 'blue', 'red', 'green'])
+plt.title('Andhra Pradesh Election - Party Seats')
+plt.show()
+
+# Scatter chart
+plt.figure(figsize=(8, 6))
+plt.scatter(df['Votes'], df['Seats'], color='red', s=100)
+plt.title('Votes vs Seats - Andhra Pradesh Election')
+plt.xlabel('Votes')
+plt.ylabel('Seats')
+plt.grid(True)
+plt.show()
+
+
+
